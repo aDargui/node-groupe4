@@ -1,5 +1,19 @@
 // Require the framework and instantiate it
 const fastify = require('fastify')({ logger: true })
+// Connexion à la BDD
+
+fastify.register(require('fastify-mongodb') ,{ 
+	// force la fermeture de la connexion mongodb lorsque l'application s'arrête 
+	// la valeur par défaut est false 
+	forceClose : true ,
+	url: 'mongodb://localhost:27017/superheroes' 
+  } )
+// users
+// user.role = user
+// user.role = admin
+// heroes
+// conversations
+
 
 // METHOD API REST
 // GET - READ
@@ -27,7 +41,12 @@ fastify.get('/heroes', () => {
 // /heroes POST - Ajouter un nouvel héro
 fastify.post ('/heroes', (request, reply) => {
 	console.log(request.body)
+	// pour se connecter à ma bdd
+	const collection = fastify.mongo.db.collection("heroes")
+	console.log (collection)
+	collection.insertOne(request.body)
 	return null
+	// reply.send(null)
 })
 
 fastify.get('/me', function () {
