@@ -16,6 +16,7 @@ fastify.get('/', (request, reply) => {
 // Déclarer la route /heroes - Cette route retournera la liste des avengers
 const avengers = ["Iron man", "Captain america", "Spiderman"]
 
+// heroes GET - on obtient la liste des héros
 fastify.get('/heroes', () => {
 	// return {
 	// 	avengers // équivalent à avengers: avengers
@@ -23,11 +24,17 @@ fastify.get('/heroes', () => {
 	return avengers
 })
 
+// /heroes POST - Ajouter un nouvel héro
+fastify.post ('/heroes', (request, reply) => {
+	console.log(request.body)
+	return null
+})
+
 fastify.get('/me', function () {
 	return {
-		prenom: "Fabio",
-		nom: "Ginja",
-		job: "developpeur",
+		prenom: "Leititia",
+		nom: "BOUANGA",
+		job: "chef de projet web",
 	}
 })
 
@@ -35,6 +42,7 @@ fastify.get('/me', function () {
 // Run the server!
 const start = async () => {
   try {
+	  console.log("Serveur lancé: http:// localhost:4000")
     await fastify.listen(4000)
   } catch (err) {
     fastify.log.error(err)
