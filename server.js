@@ -96,6 +96,20 @@ fastify.get('/me', function () {
 	}
 })
 
+// Exercice:
+// Je souhaite:
+// Une route qui me permette de créer un nouvel utilisateur (user) dans une collection users
+// 		- email
+// 		- password
+// 		- role (user/admin)
+// Une route qui me permette de récupérer tout les utilisateurs
+// Une route qui me permette de récupérer un utilisateur par son id
+// Une route qui me permette de mettre à jour un utilisateur par son id
+// Une route qui me permette de supprimer un utilisateur par son id
+
+
+
+
 // Run the server!
 const start = async () => {
   try {

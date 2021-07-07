@@ -33,10 +33,10 @@ Content-Type: application/json
 GET http://localhost:4000/heroes/60e4549f61fb2150a0dd62cc
 
 ###
-GET http://localhost:4000/bio/60e46496acf4782ae8008a39
+GET http://localhost:4000/heroes/bio/60e46496acf4782ae8008a39
 
 ###
-DELETE http://localhost:4000/bio/60e4549f61fb2150a0dd62cc
+DELETE http://localhost:4000/heroes/60e4549f61fb2150a0dd62cc
 
 ###
 
@@ -45,7 +45,7 @@ Content-Type: application/json
 
 {
 	"biography.full-name": "Bruce Wayne"
-	}
+	
 }
 
 // "Content-Type" permet de spécifier le type d'info envoyé par le client. c'est l'équivalent de mettre une extension à notre fichier
