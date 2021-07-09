@@ -1,6 +1,6 @@
 const { ObjectId } = require('mongodb') // https://docs.mongodb.com/drivers/node/current/fundamentals/
 const argon2 = require('argon2') // https://www.npmjs.com/package/argon2
-
+//OLFA MODIFICATION 
 async function routes(fastify, options) {
 	// Déclarer la route /heroes - Cette route retournera la liste des heros
 	// /heroes GET - Obtiens la liste des héros
