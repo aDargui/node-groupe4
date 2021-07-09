@@ -48,4 +48,46 @@ Content-Type: application/json
 	
 }
 
+###
+POST http://localhost:4000/users
+Content-Type: application/json
+
+{
+	"email": "leititiab@gmail.com",
+	"password": "Abracadabra",
+	"role": "user"
+}
+
+###
+GET http://localhost:4000/users
+
+###
+GET http://localhost:4000/users/60e719162d3793936850acbc
+
+###
+PATCH http://localhost:4000/users/60e719162d3793936850acbc
+Content-Type: application/json
+
+{
+	"password": "secret"
+}
+
+###
+DELETE http://localhost:4000/users/60e5c047c179526850bdc822
+
+
+###
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+	"email": "leititiab@gmail.com",
+	"password": "Abracadabra"
+}
+
+###
+GET http://localhost:4000/protected
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZTcyMmNjN2E4MDFjMmU1MDRjZTg2MCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjI1NzYwNTA4fQ.TxpSEP0Wkvu19cXs_Gbz0dQv4eNZPgJZv2I53b1stWM
+
+
 // "Content-Type" permet de spécifier le type d'info envoyé par le client. c'est l'équivalent de mettre une extension à notre fichier
