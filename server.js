@@ -1,27 +1,33 @@
-const {
-	default: fastifyMongodb
-} = require('fastify-mongodb')
-
 // Require the framework and instantiate it
-const fastify = require('fastify')({
-	logger: true
-})
-const {
-	ObjectId
-} = require('mongodb')
-const argon2 = require('argon2')
-const createError = require('http-errors')
+const fastify = require('fastify')({ logger: true })
+const { ObjectId } = require('mongodb')
+
+
+// const jwt = require('jsonwebtoken'); //https://www.npmjs.com/package/jsonwebtoken
+//pour fastify-jwt faut installer : npm install fastify-jwt
+// https://www.npmjs.com/package/fastify-jwt
 
 fastify.register(require('fastify-jwt'), {
-	secret: 'monsupersecretestmoi'
-	// le secret ne doit être divulgué à personne 
+	secret: 'supersecret'
+  }) 
+
+// Faut installer npm i fastify-cors
+fastify.register(require ('fastify-cors'),{
+  origin: "*"
 })
-// Connexion à la BDD
+
+// Connexion à la base de donnee -- https://github.com/fastify/fastify-mongodb
 fastify.register(require('./connector'))
-//importation de la route "heroes"
+
+// Importation de la route heroes
 fastify.register(require('./src/routes/heroes'))
-//importation de la route "users"
+
+// Importation de la route users
 fastify.register(require('./src/routes/users'))
+
+// Importation de la route / login
+fastify.register(require('./src/routes/login'))
+
 
 
 

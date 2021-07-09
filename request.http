@@ -54,7 +54,7 @@ Content-Type: application/json
 
 {
 	"email": "leititiab@gmail.com",
-	"password": "Abracadabra",
+	"password": "secret",
 	"role": "user"
 }
 
@@ -62,10 +62,10 @@ Content-Type: application/json
 GET http://localhost:4000/users
 
 ###
-GET http://localhost:4000/users/60e719162d3793936850acbc
+GET http://localhost:4000/users/60e8ae9408a05429ba7d6f40
 
 ###
-PATCH http://localhost:4000/users/60e719162d3793936850acbc
+PATCH http://localhost:4000/users/60e8ae9408a05429ba7d6f40
 Content-Type: application/json
 
 {
@@ -73,7 +73,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:4000/users/60e5c047c179526850bdc822
+DELETE http://localhost:4000/users/Faut_coller_code_ID_ICI
 
 
 ###
@@ -82,7 +82,7 @@ Content-Type: application/json
 
 {
 	"email": "leititiab@gmail.com",
-	"password": "Abracadabra"
+	"password": "secret"
 }
 
 ###
